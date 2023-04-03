@@ -21,3 +21,8 @@
 
 ##ignoring image folder
 /image
+##ignoring fpdf folder
+/fpdf
+##ignoring file that contains private information, the info is passed by calling the function.
+pInfo.php
+
