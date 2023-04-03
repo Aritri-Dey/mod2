@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block body %} 
+  <body class="cart">
+    <div class="conatiner">
+    <div class="center">
+      <form action="/checkout" method="post" name="cartform" class="cart-form">
+        <div>
+          <label>Name:</label>
+          <input id="name" type="text" name="name">
+          <span id="errorname"></span>
+          {% if nameErrEmpty is defined %}
+            <p id="error">{{ nameErrEmpty }}</p>
+          {% endif %}
+          {% if nameErr is defined %}
+            <p id="error">{{ nameErr }}</p>
+          {% endif %}
+        </div>
+        <div>
+          <label>Email:</label>
+          <input id="email" type="email" name="email">
+          <span id="erroremail"></span>
+          {% if emailErrEmpty is defined %}
+            <p id="error">{{ emailErrEmpty }}</p>
+          {% endif %}
+        </div>
+        <div>
+          <label>Phone number: </label>
+          <input id="phone" type="text" name="phone">
+          <span id="errorphone"></span>
+          {% if numErrEmpty is defined %}
+            <p id="error">{{ numErrEmpty }}</p>
+          {% endif %}
+          {% if numErr is defined %}
+            <p id="error">{{ numErr }}</p>
+          {% endif %}
+        </div>
+        <div>
+          <label>Amount: </label>
+          <input id="amt" type="text" name="amt" disabled placeholder={{ amt }}>
+        </div>
+        <div>
+          <input type="submit" value="Checkout" class="buttons" name="checkout" onclick="return check()">
+        </div>
+        {% if success is defined %}
+          <p id="succ">{{ success }}</p>
+        {% endif %}
+        {% if error is defined %}
+          <p id="error">{{ error }}</p>
+        {% endif %}
+      </form>
+
+      </div>
+    </div>
+    
+  </body>
+{% endblock %}

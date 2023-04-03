@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Healthy Snacky{% endblock %}
+
+{% block body %}
+  <body class="healthy-page">
+    <h1>Healthy snack</h1>
+    <div class="container">
+     <form action="/cart" method="post">
+        <div class="healthy-div">
+      
+          
+            {% for each in healthy %}
+                <div class="eachsnack">
+                  <img src={{ each.img }} alt="title" height="200px">
+                  <h3>{{ each.name }}</h3>
+                  <h6>{{ each.price }}</h6>
+                  <input type="number" name="quantity" placeholder="Enter quatity">
+                  <input type="checkbox" name="check" value={{each.price}}>
+                </div>
+            {% endfor %}
+          
+        </div>
+        <input type="submit" name="addhealthy" class="addbutton" value="Submit">
+        
+      </form>
+  </body>
+{% endblock %}
+
+  

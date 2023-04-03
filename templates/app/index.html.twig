@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppController!{% endblock %}
+
+{% block body %}
+<body class="index">
+    <div class="container">
+      <h1>Welcome to Innoraft Groceries.</h1>
+
+      <div class="items">
+        <div class="healthy">
+        <h2>Healthy Snacks</h2>
+        <img src="/assets/image/healthy.jpg" alt="healthy" id="healthy" height="200px">
+         <h3>Choose from a variety of healthy snacks.</h3>
+         <a href="/showhealthy" id="marketBtn">Go to market</a>
+        </div>
+        <div class="unhealthy">
+        <h2>Unhealthy Snacks</h2>
+          <img src="/assets/image/unhealthy.jpg" alt="unhealthy" id="unhealthy" height="200px">
+          <h3>Choose from a variety of tasty snacks.</h3>
+          <a href="/showunhealthy" id="marketBtn">Go to market</a>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+
+{% endblock %}
